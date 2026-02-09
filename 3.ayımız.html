@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nice Mutlu Aylara: 3. Ayımız Kutlu Olsun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            /* Deep Rose/Pink */
+            --bg-gradient-start: #ffe6ea;
+            /* Soft Pink */
+            --bg-gradient-end: #fff0f3;
+            /* Creamy Pink */
+            --text-color: #4a4a4a;
+            --glass-bg: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating Particles / Sparkles */
+        .sparkle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 4s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* Timer Styles */
+        .timer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            min-width: 100px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            color: #666;
+        }
+
+        /* Poem Section */
+        .poem-section {
+            font-style: italic;
+            animation: fadeInUp 1.6s ease-out;
+        }
+
+        .poem-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #5d3a4a;
+        }
+
+        /* Surprise Button */
+        .button-container {
+            margin-top: 1rem;
+            animation: fadeInUp 1.8s ease-out;
+        }
+
+        .surprise-btn {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 105, 135, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 105, 135, 0.5);
+        }
+
+        .surprise-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Click Heart Animation */
+        .click-heart {
+            position: fixed;
+            pointer-events: none;
+            color: white;
+            font-size: 24px;
+            animation: heartRise 2.5s forwards ease-out;
+            z-index: 1000;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes heartRise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal/Toast for Surprise */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            margin-bottom: 1.5rem;
+        }
+
+        .close-btn {
+            background: #eee;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .timer-container {
+                gap: 0.5rem;
+                flex-wrap: nowrap;
+            }
+
+            .time-box {
+                min-width: auto;
+                flex: 1;
+                padding: 0.8rem 0.4rem;
+            }
+
+            .time-value {
+                font-size: 1.5rem;
+            }
+
+            .time-label {
+                font-size: 0.7rem;
+            }
+
+            .poem-text {
+                font-size: 1rem;
+            }
+
+            .surprise-btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sparkles Background Elements -->
+    <div id="sparkles-container"></div>
+
+    <main class="container">
+        <!-- Header -->
+        <header>
+            <h1>3. Ayımız Kutlu Olsun</h1>
+            <p class="subtitle">Birlikte geçen her saniye bir hediye...</p>
+        </header>
+
+        <!-- Timer -->
+        <section class="timer-container glass-card">
+            <div class="time-box">
+                <span class="time-value" id="days">0</span>
+                <span class="time-label">Gün</span>
+            </div>
+            <div class="time-box">
+                <span class="time-value" id="hours">0</span>
+                <span class="time-label">Saat</span>
+            </div>
+            <div class="time-box">
+                <span class="time-value" id="minutes">0</span>
+                <span class="time-label">Dakika</span>
+            </div>
+            <div class="time-box">
+                <span class="time-value" id="seconds">0</span>
+                <span class="time-label">Saniye</span>
+            </div>
+        </section>
+
+        <!-- Poem -->
+        <section class="poem-section glass-card">
+            <div class="poem-text">
+                "Birlikte geçen üç ay, koca bir ömür gibi,<br>
+                Gözlerindeki ışık, kalbimin tek sahibi.<br>
+                Her anımız mucize, her gülüşün hediye,<br>
+                Seninle varım ben, aşkla dolu nice senelere."
+            </div>
+        </section>
+
+        <!-- Surprise Button -->
+        <div class="button-container">
+            <button class="surprise-btn" id="surpriseBtn">Sürprizi Gör ✨</button>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="surpriseModal">
+        <h2>Sana Bir Mesajım Var! 💌</h2>
+        <p></p>
+        <button class="close-btn" onclick="closeModal()">Kapat</button>
+    </div>
+
+    <script>
+        // --- 1. Live Anniversary Counter ---
+        const startDate = new Date('October 16, 2025 21:26:00').getTime();
+
+        function updateCounter() {
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days;
+                document.getElementById('hours').innerText = hours;
+                document.getElementById('minutes').innerText = minutes;
+                document.getElementById('seconds').innerText = seconds;
+            }
+        }
+
+        setInterval(updateCounter, 1000);
+        updateCounter(); // Initial call
+
+        // --- 2. White Heart Click Effect ---
+        document.addEventListener('click', function (e) {
+            // Don't spawn heart if clicking button (optional constraint, but nice to overlap)
+            createHeart(e.clientX, e.clientY);
+        });
+
+        function createHeart(x, y) {
+            const heart = document.createElement('div');
+            heart.classList.add('click-heart');
+            heart.innerHTML = '🤍'; // White heart emoji
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+
+            // Randomize size slightly
+            const size = Math.random() * 20 + 20;
+            heart.style.fontSize = size + 'px';
+
+            // Randomize slight horizontal movement
+            const randomX = (Math.random() - 0.5) * 40;
+            heart.style.transform = `translate(${randomX}px, 0)`;
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 2500);
+        }
+
+        // --- 3. Background Sparkles ---
+        function createSparkles() {
+            const container = document.getElementById('sparkles-container');
+            const sparkleCount = 20;
+
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+
+                // Random positioning
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+
+                // Random size
+                const size = Math.random() * 5 + 2;
+                sparkle.style.width = size + 'px';
+                sparkle.style.height = size + 'px';
+
+                // Random delay
+                sparkle.style.animationDelay = Math.random() * 4 + 's';
+
+                container.appendChild(sparkle);
+            }
+        }
+        createSparkles();
+
+        // --- 4. Surprise Button Logic ---
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const modal = document.getElementById('surpriseModal');
+        const modalText = modal.querySelector('p');
+
+        const compliments = [
+            "Gülüşünle dünyamı aydınlatıyorsun.",
+            "Seninle geçen her an, ömrüme ömür katıyor.",
+            "Gözlerinde kaybolmak en sevdiğim yolculuk.",
+            "Kalbimin atış sebebisin.",
+            "Sesini duymak günün en güzel melodisi.",
+            "Sen benim en güzel şansımsın.",
+            "Varlığın bana huzur veriyor.",
+            "Bana aşkın en güzel halini yaşatıyorsun.",
+            "Her bakışında yeniden aşık oluyorum.",
+            "Seninle her şey daha renkli, daha güzel.",
+            "Hayallerimin bile ötesindesin.",
+            "Sen benim evimsin.",
+            "Ellerini tuttuğumda zaman dursun istiyorum.",
+            "Sadece sen ol, bana yetersin.",
+            "Mükemmel kelimesinin sözlükteki karşılığısın.",
+            "Seninle yaşlanmak en büyük hayalim.",
+            "Ruh eşimi bulduğum için çok şanslıyım.",
+            "En kötü günümü bile bir gülüşünle güzelleştiriyorsun.",
+            "Sen benim mucizemsin.",
+            "Kelimeler sana olan sevgimi anlatmaya yetersiz.",
+            "Senin yanında kendimi tamamlanmış hissediyorum.",
+            "Gözlerin gökyüzü, ben ise o gökyüzünde bir kuşum.",
+            "Senin sevgin kalbimin ilacı.",
+            "Her sabah uyanma sebebimsin.",
+            "Seninle sonsuzluğa yürümek istiyorum.",
+            "Kalbimin tek sahibi sensin.",
+            "Sen benim en kıymetli hazinemsin.",
+            "Varlığınla hayatıma anlam katıyorsun.",
+            "Seni sevmek nefes almak kadar doğal.",
+            "Seninle üstesinden gelemeyeceğim şey yok.",
+            "Benim için yaratılmış gibisin.",
+            "Aşkın ne demek olduğunu seninle öğrendim.",
+            "Sen benim güneşim, ayım ve yıldızımsın.",
+            "Kokun dünyadaki en güzel koku.",
+            "Sana sarıldığımda tüm dertlerim uçup gidiyor.",
+            "Sanırım sen benim en güzel rüyamın gerçeğe dönüşmüş halisin.",
+            "Gözlerinin içine baktığımda geleceğimi görüyorum.",
+            "Seninle geçen her gün bir masal gibi.",
+            "Seninle her şey daha renkli, daha güzel.",
+            "Sensiz bir hayat düşünemiyorum.",
+            "Sen benim en güzel rüyamın gerçeğe dönüşmüş halisin.",
+            "Varlığınla dünyayı güzelleştiriyorsun.",
+            "Seni her şeyden çok seviyorum.",
+            "Sen benim ruhumun aynasısın.",
+            "Dünüm, bugünüm ve yarınımsın.",
+            "Sen benim şans meleğimsin.",
+            "Hayatıma girdiğin gün doğum günüm sayılır.",
+            "Seninle her mevsim bahar.",
+            "Seni sevmek dünyanın en güzel duygusu.",
+            "İyi ki varsın, iyi ki benimlesin sevgilim."
+        ];
+
+        surpriseBtn.addEventListener('click', (e) => {
+            // Pick random compliment
+            const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+
+            // Update Modal Content
+            modalText.innerText = randomCompliment;
+
+            // Trigger Confetti
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff9a9e', '#fecfef', '#ffffff', '#d63384']
+            });
+
+            // Show Modal after brief delay
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 300);
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

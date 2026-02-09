@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStore | Sepet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/placeholder.png" type="image/png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">MINESTORE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="blocks.html">Bloklar</a></li>
+            <li><a href="items.html">Eşyalar</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="cart.html" class="active">Sepet <span id="cart-count" class="badge">0</span></a></li>
+        </ul>
+        <form action="search.html" method="GET" class="nav-search-form">
+            <input type="text" name="query" class="nav-search-input" placeholder="Ürün ara..." required>
+            <button type="submit" class="nav-search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <div class="container" style="min-height: 60vh;">
+        <h2 class="section-title">SEPETİNİZ</h2>
+
+        <!-- Empty State -->
+        <div id="empty-state"
+            style="background: white; padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-sm); text-align: center; max-width: 800px; margin: 0 auto; border: 1px solid #ddd;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🛒</div>
+            <h3 style="font-family: var(--header-font); color: #333; margin-bottom: 1rem;">Sepetiniz şu an boş.</h3>
+            <p style="color: #666; margin-bottom: 2rem;">Envanterinizde yer mi kalmadı? Endişelenmeyin, Shulker
+                kutularımız da var.</p>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="blocks.html" class="btn-primary">BLOKLARA GÖZ AT</a>
+                <a href="items.html" class="btn-primary"
+                    style="background-color: var(--mc-stone); border-color: #555;">EŞYALARA GÖZ AT</a>
+            </div>
+        </div>
+
+        <!-- Filled State (Hidden by default) -->
+        <div id="filled-state" style="display: none; max-width: 800px; margin: 0 auto;">
+            <div id="cart-items-container" style="margin-bottom: 2rem;">
+                <!-- JS Items go here -->
+            </div>
+
+            <div
+                style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid #ddd;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 1.5rem; font-family: var(--header-font);">
+                    <span>TOPLAM:</span>
+                    <span id="total-price" style="color: var(--mc-green-dark);">0 TL</span>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                    <button onclick="clearCart()"
+                        style="background: #ff4444; color: white; border: none; padding: 1rem 2rem; border-radius: 4px; font-weight: bold; cursor: pointer;">SEPETİ
+                        TEMİZLE</button>
+                    <button class="btn-primary" onclick="window.location.href='checkout.html'">SATIN ALIMI
+                        TAMAMLA</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MINESTORE</h4>
+                <p class="footer-desc">Minecraft evreninin en güvenilir blok ve eşya tedarikçisi. Steve ve Alex'in
+                    onayıyla 2024'ten beri hizmetinizde.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>HIZLI LİNKLER</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="blocks.html">Bloklar</a></li>
+                    <li><a href="items.html">Eşyalar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="cart.html">Sepetim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Kaman, Kırşehir, Türkiye</li>
+                    <li><i class="fas fa-phone"></i> +90 (555) 555 55 55</li>
+                    <li><i class="fas fa-envelope"></i> idrocan@protonmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>BÜLTEN</h4>
+                <p class="footer-desc">Yeni gelen bloklardan haberdar ol!</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="E-posta adresi">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 MineStore. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

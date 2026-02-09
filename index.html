@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStore | Minecraft Evrenindeki En İyi Mağaza</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/grass_block_side.png"
+        type="image/png">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">MINESTORE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+            <li><a href="blocks.html">Bloklar</a></li>
+            <li><a href="items.html">Eşyalar</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="cart.html">Sepet <span id="cart-count" class="badge">0</span></a></li>
+        </ul>
+        <form action="search.html" method="GET" class="nav-search-form">
+            <input type="text" name="query" class="nav-search-input" placeholder="Ürün ara..." required>
+            <button type="submit" class="nav-search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero"
+        style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero_bg.jpg'); background-size: cover; background-position: center; min-height: 600px; display: flex; align-items: center; justify-content: center; background-color: #222;">
+        <div class="container" style="text-align: center; color: white;">
+            <h1 style="font-size: 3rem; margin-bottom: 1.5rem; text-shadow: 4px 4px 0 #000; letter-spacing: 2px;">
+                MACERAYA HAZIR MISIN?</h1>
+            <p
+                style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; color: #ddd;">
+                En nadir bloklardan efsanevi silahlara kadar ihtiyacın olan her şey MineStore'da. Hayalindeki dünyayı
+                inşa etmeye bugün başla.
+            </p>
+            <a href="blocks.html" class="btn-primary" style="font-size: 1.1rem; padding: 1.5rem 3rem;">ŞİMDİ ALIŞVERİŞE
+                BAŞLA</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="container" style="margin-top: 4rem;">
+        <h2 class="section-title">NEDEN MINESTORE?</h2>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+            <div
+                style="flex: 1; min-width: 250px; text-align: center; padding: 2rem; background: white; box-shadow: var(--shadow-sm); border-radius: 8px;">
+                <h3 style="font-family: var(--header-font); margin-bottom: 1rem; color: var(--mc-green-dark);">%100
+                    Orijinal</h3>
+                <p>Tüm bloklarımız ve eşyalarımız doğrudan Nether ve End'den getirilmiştir.</p>
+            </div>
+            <div
+                style="flex: 1; min-width: 250px; text-align: center; padding: 2rem; background: white; box-shadow: var(--shadow-sm); border-radius: 8px;">
+                <h3 style="font-family: var(--header-font); margin-bottom: 1rem; color: var(--mc-green-dark);">Hızlı
+                    Teslimat</h3>
+                <p>Ender Sandığı teknolojisi ile siparişleriniz anında elinizde.</p>
+            </div>
+            <div
+                style="flex: 1; min-width: 250px; text-align: center; padding: 2rem; background: white; box-shadow: var(--shadow-sm); border-radius: 8px;">
+                <h3 style="font-family: var(--header-font); margin-bottom: 1rem; color: var(--mc-green-dark);">Güvenli
+                    Ödeme</h3>
+                <p>Zümrütleriniz bizimle güvende. Köylü ticareti standartlarında güven.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container">
+        <h2 class="section-title">ÖNE ÇIKAN KOLEKSİYONLAR</h2>
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+
+            <!-- Category Teaser 1 -->
+            <div class="product-card" onclick="location.href='blocks.html'" style="cursor: pointer;">
+                <div class="product-image" style="height: 250px;">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/diamond_block.png"
+                        alt="Bloklar" onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Bloklar'">
+                </div>
+                <div class="product-info" style="text-align: center;">
+                    <h3 class="product-title" style="font-family: var(--header-font); font-size: 1.5rem;">Nadir Bloklar
+                    </h3>
+                    <p class="product-desc" style="margin-top: 1rem;">Yapılarınız için en özel materyaller.</p>
+                    <span class="btn-primary" style="display: inline-block; margin-top: 1rem;">KEŞFET</span>
+                </div>
+            </div>
+
+            <!-- Category Teaser 2 -->
+            <div class="product-card" onclick="location.href='items.html'" style="cursor: pointer;">
+                <div class="product-image" style="height: 250px;">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/item/diamond_chestplate.png"
+                        alt="Eşyalar" onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Esyalar'">
+                </div>
+                <div class="product-info" style="text-align: center;">
+                    <h3 class="product-title" style="font-family: var(--header-font); font-size: 1.5rem;">Efsanevi
+                        Eşyalar</h3>
+                    <p class="product-desc" style="margin-top: 1rem;">Savaşta ve madende seni güçlü kılar.</p>
+                    <span class="btn-primary" style="display: inline-block; margin-top: 1rem;">KEŞFET</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MINESTORE</h4>
+                <p class="footer-desc">Minecraft evreninin en güvenilir blok ve eşya tedarikçisi. Steve ve Alex'in
+                    onayıyla 2024'ten beri hizmetinizde.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>HIZLI LİNKLER</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="blocks.html">Bloklar</a></li>
+                    <li><a href="items.html">Eşyalar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="cart.html">Sepetim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Kaman, Kırşehir, Türkiye</li>
+                    <li><i class="fas fa-phone"></i> +90 (555) 555 55 55</li>
+                    <li><i class="fas fa-envelope"></i> idrocan@protonmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>BÜLTEN</h4>
+                <p class="footer-desc">Yeni gelen bloklardan haberdar ol!</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="E-posta adresi">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 MineStore. <a href="SevgilimeEasterEgg.html">T</a>üm hakları saklıdır.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

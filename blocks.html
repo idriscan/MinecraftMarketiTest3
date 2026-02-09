@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStore | Bloklar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/grass_block_side.png"
+        type="image/png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">MINESTORE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="blocks.html" class="active">Bloklar</a></li>
+            <li><a href="items.html">Eşyalar</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="cart.html">Sepet <span id="cart-count" class="badge">0</span></a></li>
+        </ul>
+        <form action="search.html" method="GET" class="nav-search-form">
+            <input type="text" name="query" class="nav-search-input" placeholder="Ürün ara..." required>
+            <button type="submit" class="nav-search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <div class="container">
+        <!-- Hero for Blocks -->
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-family: var(--header-font); font-size: 2.5rem; margin-top: 2rem;">BLOK KATALOĞU</h1>
+            <p style="color: #666; max-width: 600px; margin: 1rem auto;">Dünyanı inşa etmek için ihtiyacın olan her taş,
+                toprak ve cevher burada.</p>
+        </header>
+
+        <!-- Category: Basic Blocks -->
+        <div class="category-header">TEMEL BLOKLAR</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/dirt.png"
+                        alt="Toprak" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Toprak'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Temel</div>
+                    <h3 class="product-title">Toprak</h3>
+                    <p class="product-desc">En temel yapı taşı. Çimenlenmeye hazır.</p>
+                    <div class="product-footer">
+                        <span class="product-price">5 TL</span>
+                        <button class="btn-add-cart" data-name="Toprak" data-price="5">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/stone.png"
+                        alt="Taş" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Tas'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Temel</div>
+                    <h3 class="product-title">Taş</h3>
+                    <p class="product-desc">Sağlam ve güvenilir bir inşaat malzemesi.</p>
+                    <div class="product-footer">
+                        <span class="product-price">10 TL</span>
+                        <button class="btn-add-cart" data-name="Taş" data-price="10">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/oak_log.png"
+                        alt="Meşe Odunu"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Mese+Odunu'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Temel</div>
+                    <h3 class="product-title">Meşe Odunu</h3>
+                    <p class="product-desc">Her evin vazgeçilmezi doğal ahşap.</p>
+                    <div class="product-footer">
+                        <span class="product-price">15 TL</span>
+                        <button class="btn-add-cart" data-name="Meşe Odunu" data-price="15">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/sand.png"
+                        alt="Kum" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Kum'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Temel</div>
+                    <h3 class="product-title">Kum</h3>
+                    <p class="product-desc">Cam yapımı ve sahil dekorasyonu için.</p>
+                    <div class="product-footer">
+                        <span class="product-price">8 TL</span>
+                        <button class="btn-add-cart" data-name="Kum" data-price="8">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/gravel.png"
+                        alt="Çakıl" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Cakil'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Temel</div>
+                    <h3 class="product-title">Çakıl</h3>
+                    <p class="product-desc">Yol yapımı için ideal, düşmemeye dikkat.</p>
+                    <div class="product-footer">
+                        <span class="product-price">5 TL</span>
+                        <button class="btn-add-cart" data-name="Çakıl" data-price="5">EKLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Ores -->
+        <div class="category-header">MADEN CEVHERLERİ</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/coal_ore.png"
+                        alt="Kömür Cevheri"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Komur+Cevheri'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Maden</div>
+                    <h3 class="product-title">Kömür Cevheri</h3>
+                    <p class="product-desc">Yakıt ve meşale yapımı için.</p>
+                    <div class="product-footer">
+                        <span class="product-price">40 TL</span>
+                        <button class="btn-add-cart" data-name="Kömür Cevheri" data-price="40">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/iron_ore.png"
+                        alt="Demir Cevheri"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Demir+Cevheri'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Maden</div>
+                    <h3 class="product-title">Demir Cevheri</h3>
+                    <p class="product-desc">Endüstrinin bel kemiği.</p>
+                    <div class="product-footer">
+                        <span class="product-price">100 TL</span>
+                        <button class="btn-add-cart" data-name="Demir Cevheri" data-price="100">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/gold_ore.png"
+                        alt="Altın Cevheri"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Altin+Cevheri'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Maden</div>
+                    <h3 class="product-title">Altın Cevheri</h3>
+                    <p class="product-desc">Parlak ve değerli, saat yapımı için.</p>
+                    <div class="product-footer">
+                        <span class="product-price">250 TL</span>
+                        <button class="btn-add-cart" data-name="Altın Cevheri" data-price="250">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/diamond_ore.png"
+                        alt="Elmas Cevheri"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Elmas+Cevheri'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Maden</div>
+                    <h3 class="product-title">Elmas Cevheri</h3>
+                    <p class="product-desc">En nadir ve en çok aranan maden.</p>
+                    <div class="product-footer">
+                        <span class="product-price">2000 TL</span>
+                        <button class="btn-add-cart" data-name="Elmas Cevheri" data-price="2000">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/emerald_ore.png"
+                        alt="Zümrüt Cevheri"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Zumrut+Cevheri'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Maden</div>
+                    <h3 class="product-title">Zümrüt Cevheri</h3>
+                    <p class="product-desc">Köylülerle ticaret için tek para birimi.</p>
+                    <div class="product-footer">
+                        <span class="product-price">1500 TL</span>
+                        <button class="btn-add-cart" data-name="Zümrüt Cevheri" data-price="1500">EKLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Decoration -->
+        <div class="category-header">DEKORASYON</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/bookshelf.png"
+                        alt="Kitaplık"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Kitaplık'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Dekor</div>
+                    <h3 class="product-title">Kitaplık</h3>
+                    <p class="product-desc">Büyü masanızın gücünü artırır.</p>
+                    <div class="product-footer">
+                        <span class="product-price">50 TL</span>
+                        <button class="btn-add-cart" data-name="Kitaplık" data-price="50">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/torch.png"
+                        alt="Meşale" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Mesale'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Dekor</div>
+                    <h3 class="product-title">Meşale</h3>
+                    <p class="product-desc">Karanlıkta canavarları uzak tutar.</p>
+                    <div class="product-footer">
+                        <span class="product-price">10 TL</span>
+                        <button class="btn-add-cart" data-name="Meşale" data-price="10">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b3/Flower_Pot_JE2_BE2.png"
+                        alt="Çiçek Saksısı" style="image-rendering: pixelated;"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200?text=Saksi'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Dekor</div>
+                    <h3 class="product-title">Çiçek Saksısı</h3>
+                    <p class="product-desc">Çiçeklerinizi sergilemek için minik bir saksı.</p>
+                    <div class="product-footer">
+                        <span class="product-price">25 TL</span>
+                        <button class="btn-add-cart" data-name="Çiçek Saksısı" data-price="25">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/glass.png"
+                        alt="Renkli Cam" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Cam'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Dekor</div>
+                    <h3 class="product-title">Renkli Cam</h3>
+                    <p class="product-desc">Modern mimari için çeşitli renklerde.</p>
+                    <div class="product-footer">
+                        <span class="product-price">30 TL</span>
+                        <button class="btn-add-cart" data-name="Renkli Cam" data-price="30">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/glowstone.png"
+                        alt="Işıktaşı"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Isiktasi'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Dekor</div>
+                    <h3 class="product-title">Işıktaşı</h3>
+                    <p class="product-desc">Nether'den gelen doğal aydınlatma.</p>
+                    <div class="product-footer">
+                        <span class="product-price">80 TL</span>
+                        <button class="btn-add-cart" data-name="Işıktaşı" data-price="80">EKLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Building Blocks -->
+        <div class="category-header">YAPI BLOKLARI</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/bricks.png"
+                        alt="Tuğla" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Tugla'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Yapı</div>
+                    <h3 class="product-title">Tuğla</h3>
+                    <p class="product-desc">Klasik ve sıcak bir görünüm için kil tuğla.</p>
+                    <div class="product-footer">
+                        <span class="product-price">45 TL</span>
+                        <button class="btn-add-cart" data-name="Tuğla" data-price="45">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d6/Sandstone_JE2_BE2.png"
+                        alt="Kumtaşı" style="image-rendering: pixelated;"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200?text=Kumtasi'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Yapı</div>
+                    <h3 class="product-title">Kumtaşı</h3>
+                    <p class="product-desc">Çöl temalı yapılar için ideal.</p>
+                    <div class="product-footer">
+                        <span class="product-price">20 TL</span>
+                        <button class="btn-add-cart" data-name="Kumtaşı" data-price="20">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/snow.png"
+                        alt="Kar Bloğu" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Kar'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Yapı</div>
+                    <h3 class="product-title">Kar Bloğu</h3>
+                    <p class="product-desc">Kış temalı yapılar için soğuk blok.</p>
+                    <div class="product-footer">
+                        <span class="product-price">15 TL</span>
+                        <button class="btn-add-cart" data-name="Kar Bloğu" data-price="15">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/obsidian.png"
+                        alt="Obsidyen"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Obsidyen'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Yapı</div>
+                    <h3 class="product-title">Obsidyen</h3>
+                    <p class="product-desc">Patlamalara dayanıklı, Nether portalı için gerekli.</p>
+                    <div class="product-footer">
+                        <span class="product-price">500 TL</span>
+                        <button class="btn-add-cart" data-name="Obsidyen" data-price="500">EKLE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19.3/assets/minecraft/textures/block/end_stone.png"
+                        alt="End Taşı"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=End+Tasi'">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Yapı</div>
+                    <h3 class="product-title">End Taşı</h3>
+                    <p class="product-desc">Başka bir boyuttan gelen gizemli taş.</p>
+                    <div class="product-footer">
+                        <span class="product-price">120 TL</span>
+                        <button class="btn-add-cart" data-name="End Taşı" data-price="120">EKLE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MINESTORE</h4>
+                <p class="footer-desc">Minecraft evreninin en güvenilir blok ve eşya tedarikçisi. Steve ve Alex'in
+                    onayıyla 2024'ten beri hizmetinizde.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>HIZLI LİNKLER</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="blocks.html">Bloklar</a></li>
+                    <li><a href="items.html">Eşyalar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="cart.html">Sepetim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Kaman, Kırşehir, Türkiye</li>
+                    <li><i class="fas fa-phone"></i> +90 (555) 555 55 55</li>
+                    <li><i class="fas fa-envelope"></i> idrocan@protonmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>BÜLTEN</h4>
+                <p class="footer-desc">Yeni gelen bloklardan haberdar ol!</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="E-posta adresi">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 MineStore. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStore | Hakkımızda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/placeholder.png" type="image/png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">MINESTORE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="blocks.html">Bloklar</a></li>
+            <li><a href="items.html">Eşyalar</a></li>
+            <li><a href="about.html" class="active">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="cart.html">Sepet <span id="cart-count" class="badge">0</span></a></li>
+        </ul>
+        <form action="search.html" method="GET" class="nav-search-form">
+            <input type="text" name="query" class="nav-search-input" placeholder="Ürün ara..." required>
+            <button type="submit" class="nav-search-btn"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <div class="container" style="min-height: 70vh;">
+        <h2 class="section-title">HAKKIMIZDA</h2>
+
+        <section class="about-section">
+            <div class="story-content">
+                <h3 class="category-header" style="margin-top: 0;">HİKAYEMİZ</h3>
+                <p>MineStore, 2024 yılında Steve ve Alex tarafından, Overworld'ün karmaşık pazar düzenine bir son vermek
+                    amacıyla kuruldu. Yıllarca köylülerle zümrüt pazarlığı yapmaktan yorulan ikili, maceracıların en
+                    kaliteli malzemelere tek bir tıkla ulaşabileceği modern bir mağaza hayal etti.</p>
+                <p>Başlangıçta sadece küçük bir toprak kulübede "İkinci El Kazma" satarak başladığımız bu yolculuk,
+                    bugün Nether'dan End'e kadar uzanan devasa bir tedarik zincirine dönüştü. Amacımız basit: Siz inşa
+                    etmeye odaklanın, malzemeyi biz düşünelim.</p>
+                <p>MineStore olarak, Piglinlerden onaylı altınlarımız ve Enderman dostu bloklarımızla gurur duyuyoruz.
+                    Maceranızda size eşlik etmekten mutluluk duyarız!</p>
+            </div>
+
+            <div class="contact-content" style="margin-top: 3rem;">
+                <h3 class="category-header">İLETİŞİM</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <ul style="list-style: none; font-size: 1.1rem; line-height: 2;">
+                            <li><strong>📍 Adres:</strong> Şehit Deniz Kaya Mesleki ve Teknik Anadolu Lisesi,
+                                Kaman/Kırşehir/Türkiye</li>
+                            <li><strong>📞 Telefon:</strong> +90 (555) 555 55 55</li>
+                            <li><strong>📧 E-posta:</strong> idrocan@protonmail.com</li>
+                            <li><strong>⏰ Çalışma Saatleri:</strong> hafta içi 08.00 - 16.00 / cumartesi 09.00 - 13.00
+                                / pazar kapalı</li>
+                        </ul>
+                    </div>
+
+                    <div style="flex: 1; min-width: 300px;">
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d852.9259840500112!2d33.729092742006614!3d39.35505965660076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d4e397c33a4513%3A0x9a3c5d237f064d4b!2skaman%20ahi%20anadolu%20lisesi!5e1!3m2!1str!2sus!4v1770306480952!5m2!1str!2sus"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MINESTORE</h4>
+                <p class="footer-desc">Minecraft evreninin en güvenilir blok ve eşya tedarikçisi. Steve ve Alex'in
+                    onayıyla 2024'ten beri hizmetinizde.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>HIZLI LİNKLER</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="blocks.html">Bloklar</a></li>
+                    <li><a href="items.html">Eşyalar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="cart.html">Sepetim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Kaman, Kırşehir, Türkiye</li>
+                    <li><i class="fas fa-phone"></i> +90 (555) 555 55 55</li>
+                    <li><i class="fas fa-envelope"></i> idrocan@protonmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>BÜLTEN</h4>
+                <p class="footer-desc">Yeni gelen bloklardan haberdar ol!</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="E-posta adresi">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 MineStore. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStore | Giriş Yap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/placeholder.png" type="image/png">
+</head>
+
+<body
+    style="height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #222; background-image: url('images/hero_bg.jpg'); background-size: cover; background-blend-mode: overlay;">
+
+    <div class="container">
+        <div
+            style="background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 450px; margin: 0 auto; text-align: center; border: 5px solid #222;">
+            <div class="logo" style="color: #222; font-size: 2rem; margin-bottom: 2rem; text-shadow: none;">MINESTORE
+            </div>
+
+            <h2 style="font-family: var(--header-font); margin-bottom: 0.5rem; font-size: 1.5rem;">HOŞ GELDİNİZ</h2>
+            <p style="color: #666; margin-bottom: 2rem;">Mağazaya girmek için lütfen giriş yapın.</p>
+
+            <form id="login-form">
+                <div class="form-group" style="text-align: left;">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="text" id="username" class="form-control" placeholder="Oyuncu Adı" required>
+                </div>
+
+                <div class="form-group" style="text-align: left;">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">GİRİŞ YAP</button>
+            </form>
+
+            <div id="login-error" style="color: #ff4444; margin-top: 1rem; display: none; font-weight: bold;">
+                Kullanıcı adı veya şifre hatalı!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple simulation
+            if (username && password) {
+                localStorage.setItem('minestore_user', username);
+                localStorage.setItem('minestore_isLoggedIn', 'true');
+
+                // Show success
+                const btn = this.querySelector('button');
+                btn.innerText = "YÜKLENİYOR...";
+                btn.style.backgroundColor = "#333";
+
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

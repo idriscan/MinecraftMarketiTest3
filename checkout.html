@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStore | Satın Al</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/placeholder.png" type="image/png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">MINESTORE</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="blocks.html">Bloklar</a></li>
+            <li><a href="items.html">Eşyalar</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+            <li><a href="cart.html">Sepet <span id="cart-count" class="badge">0</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Advanced Search Bar -->
+    <div class="active-search-container">
+        <div class="search-box-wrapper">
+            <input type="text" class="search-input" placeholder="Ürün ara...">
+            <select class="search-select">
+                <option value="all">Tüm Kategoriler</option>
+                <option value="blocks">Bloklar</option>
+                <option value="items">Eşyalar</option>
+            </select>
+            <select class="search-select">
+                <option value="relevance">Önerilen</option>
+                <option value="price_asc">Fiyat: Artan</option>
+                <option value="price_desc">Fiyat: Azalan</option>
+                <option value="name">İsim: A-Z</option>
+            </select>
+            <button class="btn-search"><i class="fas fa-search"></i> ARA</button>
+        </div>
+    </div>
+
+    <div class="container" style="min-height: 70vh;">
+        <h2 class="section-title">SATIN ALIMI TAMAMLA</h2>
+
+        <div class="checkout-layout">
+            <!-- Left Column: Information Form -->
+            <div class="checkout-form-section">
+                <form id="checkout-form">
+                    <h3 class="category-header" style="margin-top: 0;">TESLİMAT BİLGİLERİ</h3>
+
+                    <div class="form-group">
+                        <label for="fullname">Ad Soyad</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Steve Alex" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-posta Adresi</label>
+                        <input type="email" id="email" class="form-control" placeholder="steve@minecraft.net" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Teslimat Adresi</label>
+                        <textarea id="address" class="form-control" placeholder="Overworld, Village 12, House 4..."
+                            required></textarea>
+                    </div>
+
+                    <h3 class="category-header">ÖDEME YÖNTEMİ</h3>
+                    <div class="payment-methods">
+                        <label class="payment-option selected">
+                            <input type="radio" name="payment" value="credit_card" checked>
+                            <span>Kredi Kartı</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="bank_transfer">
+                            <span>Havale / EFT</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="pay_at_door">
+                            <span>Kapıda Ödeme (Zümrüt)</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="checkout-summary-section">
+                <h3 class="category-header" style="margin-top: 0;">SİPARİŞ ÖZETİ</h3>
+
+                <div id="checkout-items-list" class="checkout-items">
+                    <!-- Javascript will populate this -->
+                    <p style="text-align: center; color: #888;">Sepetiniz yükleniyor...</p>
+                </div>
+
+                <div class="checkout-total">
+                    <span>TOPLAM:</span>
+                    <span id="checkout-total-price">0 TL</span>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <button type="submit" form="checkout-form" class="btn-primary"
+                        style="width: 100%; text-align: center;">SİPARİŞİ ONAYLA</button>
+                    <a href="cart.html"
+                        style="display: block; text-align: center; margin-top: 1rem; color: #888; text-decoration: none; font-size: 0.9rem;">Sepete
+                        Dön</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>MINESTORE</h4>
+                <p class="footer-desc">Minecraft evreninin en güvenilir blok ve eşya tedarikçisi. Steve ve Alex'in
+                    onayıyla 2024'ten beri hizmetinizde.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>HIZLI LİNKLER</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="blocks.html">Bloklar</a></li>
+                    <li><a href="items.html">Eşyalar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="cart.html">Sepetim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İLETİŞİM</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Kırşehir, Türkiye</li>
+                    <li><i class="fas fa-phone"></i> +90 (555) 555 55 55</li>
+                    <li><i class="fas fa-envelope"></i> idrocan@protonmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>BÜLTEN</h4>
+                <p class="footer-desc">Yeni gelen bloklardan haberdar ol!</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="E-posta adresi">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 MineStore. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Inline script to handle radio button styling selection behavior
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove selected class from all
+                paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                // Add to clicked
+                option.classList.add('selected');
+                // Select the radio input inside
+                const radio = option.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+            });
+        });
+    </script>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimer-modal" class="modal-overlay hidden">
+        <div class="modal-content disclaimer-modal-box">
+            <div class="modal-header disclaimer-header">
+                <span class="disclaimer-icon">⚠️</span>
+                <h2>Önemli Bilgilendirme</h2>
+            </div>
+            <div class="modal-body disclaimer-body">
+                <p>Bu web sitesi tamamen bir <strong>okul projesi (demo)</strong> çalışmasıdır.</p>
+                <p>Burada yaptığınız işlemler <strong>gerçek değildir</strong> ve herhangi bir gerçek ödeme
+                    alınmamaktadır.</p>
+                <p>Girdiğiniz veriler (isim, adres vb.) <strong>hiçbir sunucuya gönderilmez</strong>, sadece
+                    tarayıcınızda kalır ve cihazınızın dışına çıkmaz.</p>
+                <p class="safe-text"><i class="fas fa-shield-alt"></i> Verileriniz tamamen güvendedir.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="close-disclaimer-btn" class="btn-primary disclaimer-btn">Anladım, Kapat</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
